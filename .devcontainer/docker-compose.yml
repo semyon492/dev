@@ -21,18 +21,3 @@ services:
     image: mailhog/mailhog
     ports:
       - 8025:8025
-  db:
-    image: mariadb:10.4
-    restart: unless-stopped
-    volumes:
-      - mariadb-data:/var/lib/mysql
-    environment:
-      MYSQL_ROOT_PASSWORD: mariadb
-      MYSQL_DATABASE: mariadb
-      MYSQL_USER: mariadb
-      MYSQL_PASSWORD: mariadb
-      ports:
-        - 3306:3306
-
-volumes:
-  mariadb-data: null
